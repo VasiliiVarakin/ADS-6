@@ -3,7 +3,6 @@
 #include  <fstream>
 #include  <locale>
 #include  <cstdlib>
-
 BST<std::string> makeTree(char* filename)
 {
   std::string w;
@@ -15,7 +14,6 @@ BST<std::string> makeTree(char* filename)
 		{
 			file.get(str);
 		}
-
 		while (str >= 'A' && (!file.eof()))
 		{
 			if (str >= 'A' && str <= 'Z')
@@ -26,7 +24,6 @@ BST<std::string> makeTree(char* filename)
 			{
 				w += str;
 			}
-
 			file.get(str);
 		}
 		for (int i = 0; i < w.length(); i++)
@@ -34,10 +31,8 @@ BST<std::string> makeTree(char* filename)
 			if (w[i] >= 'A' && w[i] <= 'Z')
 				w[i] += 32;
 		}
-
 		(*tree).add(w);
 		w = "";
 	}
-
 	return *tree;
 }
